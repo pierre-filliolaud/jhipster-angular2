@@ -1,18 +1,19 @@
 package net.filecode.angular2.aop.logging;
 
-import io.github.jhipster.config.JHipsterConstants;
+import java.util.Arrays;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
 
-import java.util.Arrays;
+import io.github.jhipster.config.JHipsterConstants;
 
 /**
  * Aspect for logging execution of service and repository Spring components.
@@ -75,5 +76,11 @@ public class LoggingAspect {
 
             throw e;
         }
+    }
+    
+    @Before("loggingPointcut()")
+    public void logMethodCall(JoinPoint jp) {
+        String methodName = jp.getSignature().getName();
+        log.info("Before " + methodName);
     }
 }

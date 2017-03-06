@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "productType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productFamily",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "currency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "trade",
+    "pagination": "infinite-scroll"
+}

@@ -14,6 +14,7 @@ import { JhipsterEntityModule } from './entities/entity.module';
 import { LayoutRoutingModule } from './layouts';
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
+import * as alasql from 'alasql';
 
 import {
     JhiMainComponent,

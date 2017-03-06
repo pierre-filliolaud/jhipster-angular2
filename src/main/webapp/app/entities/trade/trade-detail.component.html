@@ -1,0 +1,41 @@
+
+<div *ngIf="trade">
+    <h2><span>Trade</span> {{trade.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Product Type</span></dt>
+        <dd>
+            <span>{{trade.productType}}</span>
+        </dd>
+        <dt><span>Product Family</span></dt>
+        <dd>
+            <span>{{trade.productFamily}}</span>
+        </dd>
+        <dt><span>Price</span></dt>
+        <dd>
+            <span>{{trade.price}}</span>
+        </dd>
+        <dt><span>Currency</span></dt>
+        <dd>
+            <span>{{trade.currency}}</span>
+        </dd>
+        <dt><span>Creation Date</span></dt>
+        <dd>
+            <span>{{trade.creationDate | date:'mediumDate'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'trade/'+ trade.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
